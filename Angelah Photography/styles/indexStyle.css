@@ -286,3 +286,64 @@ footer {
 	width: 96%;
 }
 }
+
+.btn-twitter{	
+	color: #fff;
+	background-color: #55ACEE;
+	border-color: rgba(0,0,0,0.2);
+}
+
+.btn-twitter:hover{
+	color: #fff;
+	background-color: #337ab7;
+	border-color: rgba(0,0,0,0.2);
+}
+
+
+.btn-facebook{
+	color: #fff;
+	background-color: #3b5998;
+	border-color: rgba(0,0,0,0.2);
+}
+
+.btn-facebook:hover{
+	color: #fff;
+	background-color: #2d4373;
+	border-color: rgba(0,0,0,0.2);
+}
+
+.btn-tumblr{
+	color: #fff;
+	background-color: #2c4762;
+	border-color: rgba(0,0,0,0.2);
+}
+
+.btn-tumblr:hover{
+	color: #fff;
+	background-color: #337ab7;
+	border-color: rgba(0,0,0,0.2);
+}
+
+.btn-instagram{
+	color: #fff;
+	background-color: #3F729B;
+	border-color: rgba(0,0,0,0.2);
+}
+
+.btn-instagram:hover{
+	color: #fff;
+	background-color: #337ab7;
+	border-color: rgba(0,0,0,0.2);
+}
+
+.btn-google-plus{
+	color: #fff;
+	background-color: #DD4B39;
+	border-color: rgba(0,0,0,0.2);
+}
+
+.btn-google-plus:hover{
+	color: #fff;
+	background-color: #c23321;
+	border-color: rgba(0,0,0,0.2);
+}
