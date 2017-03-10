@@ -56,7 +56,7 @@ header nav a {
 }
 #content #mainContent #authorInfo {
 	/* Author info section */
-	background-color: rgba(208,207,207,1.00);
+	background-color: #000;
 }
 #content #mainContent #authorInfo h2, #content #mainContent #authorInfo p {
 	color: rgba(255,255,255,1.00);
@@ -103,7 +103,7 @@ footer article h3 {
 	padding-left: 2%;
 	padding-right: 2%;
 	float: left;
-	background-color: rgba(246,246,246,1.00);
+	background-color: #000;
 	margin-top: 150px;
 	padding-top: 32px;
 }
@@ -346,4 +346,15 @@ footer {
 	color: #fff;
 	background-color: #c23321;
 	border-color: rgba(0,0,0,0.2);
+	
+}
+
+#imageLinks img{
+	width: 400px;
+   height:300px;
+   margin: 20px;
+}
+
+body{
+	background-color:#000;
 }
