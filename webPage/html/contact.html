@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<!-- Browser tab icon  -Mokeira -->
+	<link rel="shortcut icon" href="../images/b0ad6f24979385.5633d48c38952.png" type="image/png">
+	<title>Contact </title>
+	<!--Bootstrap stylesheet link -Mokeira -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<!--JS link --Mokeira -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+	<!--Bootstrap script link -Mokeira -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link href="../styles/indexStyle.css" rel="stylesheet" type="text/css">
+	</head>
+	<body>
+		<div class="navbar-container">
+
+			<!-- Static navbar -->
+			<nav class="navbar navbar-inverse">
+				<div class="container-fluid">
+					<div class="navbar-header">
+						<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+							<span class="sr-only">Toggle navigation</span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+						</button>
+						<!--<a class="navbar-brand" href="#">Project name</a>-->
+					</div>
+					<div id="navbar" class="navbar-collapse collapse">
+						<ul class="nav navbar-nav">
+							<a class="navbar-brand" rel="home" href="#" title="Where Beauty Meets the Eye"> <img style="max-width:100px; height:60px; margin-top: -11px;" src="../images/b0ad6f24979385.5633d48c38952.png"></a>
+						</ul>
+
+						<ul class="nav navbar-nav navbar-right">
+							<!-- I will leave this here in case we want to use glyphicons  --Angelah
+							<li><a href="#">Home <span class="glyphicon glyphicon-home" ></span> </a></li>
+							<li><a href="#">Blog <span class="glyphicon glyphicon-file" ></span>  </a></li>
+							<li><a href="#">About  <span class="glyphicon glyphicon-question-sign" ></span> </a></li>
+							<li><a href="#">Contact Me <span class="glyphicon glyphicon-envelope" ></span> </a></li>
+							-->
+
+							<li><a href="index.html">Home </a></li>
+							<li><a href="blog.html">Blog </a></li>
+							<li><a href="about.html">About </a></li>
+							<li><a href="#">Contact </a></li>
+						</ul>
+
+					</div><!--/.nav-collapse -->
+				</div><!--/.container-fluid -->
+			</nav>
+
+		</div>
+		<h1> This is garbage as of now </h1>
+		<?php
+			// define variables and set to empty values
+			$nameErr = $emailErr = $genderErr = $websiteErr = "";
+			$name = $email = $gender = $comment = $website = "";
+
+			if ($_SERVER["REQUEST_METHOD"] == "POST") {
+				if (empty($_POST["name"])) {
+					$nameErr = "Name is required";
+				} else {
+					$name = test_input($_POST["name"]);
+					// check if name only contains letters and whitespace
+					if (!preg_match("/^[a-zA-Z ]*$/",$name)) {
+						$nameErr = "Only letters and white space allowed"; 
+					}
+				}
+
+				if (empty($_POST["email"])) {
+					$emailErr = "Email is required";
+				} else {
+					$email = test_input($_POST["email"]);
+					// check if e-mail address is well-formed
+					if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+						$emailErr = "Invalid email format"; 
+					}
+				}
+
+				if (empty($_POST["website"])) {
+					$website = "";
+				} else {
+					$website = test_input($_POST["website"]);
+					// check if URL address syntax is valid
+					if (!preg_match("/\b(?:(?:https?|ftp):\/\/|www\.)[-a-z0-9+&@#\/%?=~_|!:,.;]*[-a-z0-9+&@#\/%=~_|]/i",$website)) {
+						$websiteErr = "Invalid URL"; 
+					}    
+				}
+
+				if (empty($_POST["comment"])) {
+					$comment = "";
+				} else {
+					$comment = test_input($_POST["comment"]);
+				}
+
+				if (empty($_POST["gender"])) {
+					$genderErr = "Gender is required";
+				} else {
+					$gender = test_input($_POST["gender"]);
+				}
+			}
+
+			function test_input($data) {
+				$data = trim($data);
+				$data = stripslashes($data);
+				$data = htmlspecialchars($data);
+				return $data;
+			}
+		?>
+
+		<h2>PHP Form Validation Example (from some site...)</h2>
+		<p><span class="error">* required field.</span></p>
+		<form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">  
+			Name: <input type="text" name="name">
+			<span class="error">* <?php echo $nameErr;?></span>
+			<br><br>
+			E-mail: <input type="text" name="email">
+			<span class="error">* <?php echo $emailErr;?></span>
+			<br><br>
+			Website: <input type="text" name="website">
+			<span class="error"><?php echo $websiteErr;?></span>
+			<br><br>
+			Comment: <textarea name="comment" rows="5" cols="40"></textarea>
+			<br><br>
+			Gender:
+			<input type="radio" name="gender" value="female">Female
+			<input type="radio" name="gender" value="male">Male
+			<span class="error">* <?php echo $genderErr;?></span>
+			<br><br>
+			<input type="submit" name="submit" value="Submit">  
+		</form>
+
+		<?php
+			echo "<h2>Your Input:</h2>";
+			echo $name;
+			echo "<br>";
+			echo $email;
+			echo "<br>";
+			echo $website;
+			echo "<br>";
+			echo $comment;
+			echo "<br>";
+			echo $gender;
+		?>
+
+	</body>
+</html>
