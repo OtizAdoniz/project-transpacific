@@ -65,7 +65,7 @@ header nav a {
 #content #mainContent #authorInfo {
 	/* created by -Innocent */
 	/* Author info section */
-	background-color: #000;
+	background-color: #e7e7e7;
 }
 #content #mainContent #authorInfo h2, #content #mainContent #authorInfo p {
 	/* created by -Innocent */
@@ -118,7 +118,7 @@ footer article h3 {
 	padding-left: 2%;
 	padding-right: 2%;
 	float: left;
-	background-color: #000;
+	background-color: #e7e7e7;
 	margin-top: 150px;
 	padding-top: 32px;
 }
@@ -370,5 +370,6 @@ footer {
 
 body{
 	/* created by -Angelah */
-	background-color:#000;
+	background-color:#fff;
 }
+
