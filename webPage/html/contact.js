@@ -13,7 +13,7 @@ function checkNullvalues()
 			alert("You entered:"+emailInput.value);
 			alert("You entered: " +message.value);
 			*/
-			alert("Thank you, "+nameInput.value+" ,for reaching out to us. We will get back to you as soon as we can.");
+			window.alert("Thank you, "+nameInput.value+" ,for reaching out to us. We will get back to you as soon as we can.");
 			
 		}
 		else
