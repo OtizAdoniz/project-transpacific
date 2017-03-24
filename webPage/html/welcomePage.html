@@ -6,26 +6,28 @@
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<title> Index </title>
-		<link rel="stylesheet" type="text/css" href="welcomePage.css"> 
+		<link rel="stylesheet" type="text/css" href="welcomePage.css"> <!-- Custom stylesheet -->
+		
+		<!-- the script below is for showing the button after some time -->
 		<script type="text/javascript">
-		function showButton()
-        {
-            document.getElementById("buttonEnter").style.visibility = "visible";
-        }
+			
+			function showButton()
+			{
+				document.getElementById("buttonEnter").style.visibility = "visible";
+			}
 
-        function hideButton()
-        {
-            document.getElementById("buttonEnter").style.visibility = "hidden";
-        }
+			function hideButton()
+			{
+				document.getElementById("buttonEnter").style.visibility = "hidden";
+			}
 
-        window.onload = function()
-        {
-            hideButton();
-            setTimeout('showButton()',2000);
-        }
+			window.onload = function()
+			{
+				hideButton();
+				setTimeout('showButton()',2000);
+			}
 
-    </script>
-	
+		</script>
 	</head>
 
 	<body>
@@ -37,14 +39,17 @@
 			<li>O</li>
 			<li>M</li>
 			<li>E</li>
-	</br></br>
-	<form action="index.html">
-	<button class="button" id="buttonEnter" >Let me in</button>
-	</form>
+			
+			</br></br>
+			
+			<!-- button that links user to 'Home' page -->
+			<form action="index.html">
+				<button class="button" id="buttonEnter" >Let me in</button>
+			</form>
 		</ul>
 	
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
-		<script type="text/javascript" src="welcomePage.js"></script>
+		<script type="text/javascript" src="welcomePage.js"></script> <!-- script for animating the 'WELCOME' text -->
 	</body>
 
 </html>
